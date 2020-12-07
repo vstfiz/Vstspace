@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Login</title>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+	<script src="js/config.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+	<link rel="stylesheet" href="css/login.css" />
+	<script>
+		function logIn() {
+			var mail = document.getElementById("mail").value;
+			var pass = document.getElementById("password").value;
+			console.log(mail);
+			console.log(pass);
+			if ((mail != '') && (pass != '')) {
+				firebase.auth().signInWithEmailAndPassword(mail, pass).then(user => {
+					firebase.auth().onAuthStateChanged(function (user) {
+						if (user.uid != null) {
+							window.location.replace("index.html");
+						} else {
+							console.log("null user");
+						}
+					});
+				}).catch(error => {
+					var errorCode = error.code;
+					var errorMessage = error.message;
+					console.log("Eror messwage is " + errorMessage);
+					console.log("error code is " + errorCode);
+					alert(errorMessage);
+				});
+
+			}
+			else {
+				alert('Mail or Password cannot be empty');
+			}
+
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container" id="container">
+		<div class="lform-container sign-in-container">
+			<div class="column" style="justify-content: center;">
+				<h1 style="margin-top: 25%; margin-left:10% ;">Sign in</h1>
+				<input id="mail" type="email" placeholder="Email" style="margin-top: 30px;
+				width: 80%;margin-left: 10%;text-decoration-color: white;color" />
+				<input id="password" type="password" placeholder="Password" style="
+				width: 80%;margin-left: 10%;" />
+				<br>
+				<br>
+				<a href="forgotpass.html"  style="
+				width: 80%;margin-left: 10%;">Forgot your password?</a>
+				<br>
+				<button onclick="logIn();"  style="
+				width: 80%;margin-left: 10%;margin-top:25px ;">Sign In</button>
+			</div>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your credentials to start learning more about the vast universe.</p>
+					<p>For new account, please register<a href="register.html" style="color: rgb(184, 184, 61);"> here.</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<script> src = "main.js"</script>
+</body>
+</html>

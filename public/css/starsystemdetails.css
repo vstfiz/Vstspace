@@ -1,0 +1,255 @@
+.mr-2{
+  margin-right: 0.5rem !important; }
+.breadcrumbs {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 47vw;
+  margin-top: 50vh;
+  z-index: 1;
+ }
+
+.page-content{
+    margin-top: 5vh;
+    margin-left: 5vw;
+    text-align: justify;
+    color: white;
+    font-family: Livvic;
+    font-size: 27px;
+}
+
+
+body {
+    background-color: black;
+}
+
+.background-cont {
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: top;
+ background-image: url('../images/7068.jpg');
+ width: 100vw;
+ height: 100vh;
+ font-family: Arial, Helvetica;
+ letter-spacing: 0.02em;
+  font-weight: 400;
+ -webkit-font-smoothing: antialiased; 
+}
+
+.blurred-box{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: inherit;
+  overflow: hidden;
+}
+
+.blurred-box:after{
+ content: '';
+ width: 100vw;
+ height: 100vh;
+ background: inherit; 
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 0;  
+ bottom: 0;
+ filter: blur(4px);
+}
+
+@font-face {
+  font-family: Livvic;
+  src: url(../assets/fonts/Livvic_Light.ttf);
+}
+
+.container{
+    z-index: 1;
+    position: relative;
+}
+
+
+.navigator{
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+}
+
+
+.title{
+    font-size: 50px;
+    font-family: Livvic;
+    color: white;
+    margin-left: 2vw;
+    margin-top: 1.5vh;
+}
+
+
+.banner-title{
+    color: white;
+    z-index: 1;
+    font-size: 60px;
+    font-family: Livvic;
+    position: relative;
+    top: 50vh;
+}
+
+.page-title{
+    color: white;
+    font-size: 50px;
+font-weight: bold;
+    font-family: Livvic;
+    margin-top: 5%;
+    text-align: center;
+    left: 5vw;
+}
+
+.page-image{
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Planets2013.svg/1024px-Planets2013.svg.png');
+    background-repeat: no-repeat;
+    background-size: 90vw 60vh;
+    margin: 5vw 5vh;
+    width: 90vw;
+    height: 60vh;
+}
+
+.page-content{
+    margin-top: 5vh;
+    margin-left: 5vw;
+    text-align: justify;
+    color: white;
+    font-family: Livvic;
+    font-size: 27px;
+}
+
+.card {
+  background-color: #222831;
+  height: 60vh;
+  width: 18vw;
+  margin-left: 5vw;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.card:first-child{
+    margin-left: 7vw;
+}
+
+.card__name {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+.card__image {
+  height: 160px;
+  width: 160px;
+  border-radius: 2%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58cdd1;
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #eb196e;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.contact-card-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 0.75em 2em;
+  letter-spacing: 0.05rem;
+  margin: 1em;
+  width: 13rem;
+}
+
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-size: 1.2em;
+}
+
+
+.page-footer{
+    width: 100vw;
+    height: 10vh;
+    background-color: #282828;
+    text-align: center;
+    padding-top: 4vh;
+    color: white;
+    font-family: Livvic;
+}

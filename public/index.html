@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta content='text/html' http-equiv='Content-Type'>
+	<meta content='width=device-width, initial-scale=1' name='viewport'>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+	<script src="js/config.js"></script>
+	<link rel="stylesheet" href="css/homepage.css" />
+	<script>
+		window.onload = async function(){
+			await firebase.auth().onAuthStateChanged(function (user) {
+				if (user.uid != null) {
+					var d = document.getElementById('login');
+					d.style.display = 'none';
+					var d = document.getElementById('logOut');
+					d.style.display = 'inline-block';
+				}});
+
+		};
+
+		function logOut() {
+				firebase.auth().signOut().then(function () {
+					user = null;
+					console.log('Signed Out');
+					var d = document.getElementById('logOut');
+					d.style.display = 'none';
+					var d = document.getElementById('login');
+					d.style.display = 'inline-block';
+					window.location.replace("index.html");
+				}, function (error) {
+					console.error('Sign Out Error', error);
+				});
+			}
+	</script>
+	<title>VstSpace</title>
+</head>
+
+<body>
+	<div class="background-cont">
+		<div class="blurred-box">
+			<div class="container">
+				<div class="navigator">
+					<div class="title">VstSpace</div>
+				</div>
+				
+
+
+			</div>
+			<div class="btn" onclick="window.location.replace('login.html')" style="border-radius: 4%;position: absolute;right: 5vw;bottom: 50vh;" id="login">
+				<span>Login/Register</span>
+			</div>
+			<div class="btn" onclick="logOut();"
+				style="border-radius: 4%;position: absolute;right: 5vw;bottom: 50vh; display: none;" id="logOut">
+				<span>Logout</span>
+			</div>
+			<div class="banner-title">
+				Welcome to VstSpace !
+			</div>
+			<div class="btn" onclick="window.location.replace('galaxies.html')">
+				<span>Explore</span>
+				<div class="dot"></div>
+			</div>
+			<div class="banner-content">
+				Here, you can learn various new facts regarding the universe and explore more about it !<br>And, you can
+				also gather data on various heavenly bodies and play interactive quizes to check you knowledge.
+			</div>
+		</div>
+
+	</div>
+
+</html>

@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    background-image: url('../images/7068.jpg');
+    /* background-attachment: fixed; */
+}
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/* .container:before {
+    /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5); */
+/* } */
+/* .container:before { */
+    /* box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5); */
+/* } */ 
+
+.container {
+    background: inherit;
+     filter: blur(2px);
+}
+ 
+/* .container:before {
+    background: inherit;
+} */
